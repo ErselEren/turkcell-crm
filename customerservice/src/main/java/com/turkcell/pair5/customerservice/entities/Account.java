@@ -3,6 +3,9 @@ package com.turkcell.pair5.customerservice.entities;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
+//import Customer
+import com.turkcell.pair5.customerservice.entities.Customer;
+
 import java.util.List;
 
 @Entity

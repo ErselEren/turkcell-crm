@@ -1,4 +1,4 @@
-package com.turkcell.pair5.customerservice.Entities;
+package com.turkcell.pair5.customerservice.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
