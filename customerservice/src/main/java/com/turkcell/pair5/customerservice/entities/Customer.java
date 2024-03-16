@@ -14,40 +14,49 @@ public class Customer {
     @Column(name="id")
     private int id;
 
+    @Column(name="username")
     private String username;
 
+    @Column(name="password")
     private String password;
 
-    //private Nationality nationality;
+    @OneToOne
+    @JoinColumn(name = "nationality_id")
+    private Nationality nationality;
 
-    //private List<Address> addresses;
-
-    //private Contact contact;
-
+    @Column(name="first_name")
     private String firstName;
 
+    @Column(name="last_name")
     private String lastName;
 
+    @Column(name="account_number")
     private String accountNumber;
 
+    @Column(name="gsmNumber")
     private String gsmNumber;
 
+    @Column(name="email")
     private String email;
 
     @ManyToOne
+    @JoinColumn(name = "address_id")
     private Account account;
 
     @ManyToOne
+    @JoinColumn(name = "contact_id")
     private Contact contact;
 
     //private List<String> orderIDs;
 
     //private List<Role> roles;
 
-    //private List<Account> accounts;
+    //private List<Address> addresses;
+
 
     public Customer() {
     }
+
     /*
         Nationality -> id, natianality name
         Address -> country, city, street
