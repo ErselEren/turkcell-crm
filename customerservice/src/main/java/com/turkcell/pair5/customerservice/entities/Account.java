@@ -1,6 +1,9 @@
-package entities;
+package com.turkcell.pair5.customerservice.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "entities")
@@ -22,16 +25,20 @@ public class Account {
     @Column(name = "account_type")
     private String accountType;
 
-    public Account(int accountID, String accountNumber, String accountStatus, String accountName, String accountType) {
+    @OneToMany(mappedBy = "account")
+    @JsonIgnore
+    private List<Customer> customers;
+
+    public Account(int accountID, String accountNumber, String accountStatus, String accountName, String accountType, List<Customer> customers) {
         this.accountID = accountID;
         this.accountNumber = accountNumber;
         this.accountStatus = accountStatus;
         this.accountName = accountName;
         this.accountType = accountType;
+        this.customers = customers;
     }
 
-    public Account() {
-    }
+    public Account() {}
 
     public int getAccountID() {
         return accountID;
@@ -71,5 +78,13 @@ public class Account {
 
     public void setAccountType(String accountType) {
         this.accountType = accountType;
+    }
+
+    public List<Customer> getCustomers() {
+        return customers;
+    }
+
+    public void setCustomers(List<Customer> customers) {
+        this.customers = customers;
     }
 }
