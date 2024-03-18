@@ -9,7 +9,7 @@ import com.turkcell.pair5.customerservice.entities.Customer;
 import java.util.List;
 
 @Entity
-@Table(name = "entities")
+@Table(name = "accounts")
 public class Account {
 
     @Id
